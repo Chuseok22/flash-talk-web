@@ -1,21 +1,21 @@
-name: workflow-name # 워크플로 이름
+name: flash-talk-web-cicd # 워크플로 이름
 
 on:
   push:
     branches: # 워크플로 대상 브랜치
-#      - main
-#      - test
+      - main
+      - test
     paths-ignore: # 제외 경로
-#      - 'CHANGELOG.md'
-#      - 'package.json'
-#      - 'package-lock.json'
+      - 'CHANGELOG.md'
+      - 'package.json'
+      - 'package-lock.json'
 
 env:
-  PROJECT_NAME: my-project # 프로젝트 명
+  PROJECT_NAME: flash-talk # 프로젝트 명
   DOCKERHUB_REPO: ${{ secrets.DOCKERHUB_USERNAME }}
   APP_IMAGE_SUFFIX: "-web"
-  MAIN_PORT: "3000"
-  TEST_PORT: "3001"
+  MAIN_PORT: "3001"
+  TEST_PORT: "3002"
   APP_EXPOSE_PORT: "3000"
 
 jobs:
